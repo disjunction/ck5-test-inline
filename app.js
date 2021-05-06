@@ -156,7 +156,7 @@ class PlaceholderEditing extends Plugin {
 
         conversion.for( 'upcast' ).elementToElement( {
             view: {
-                name: 'span',
+                name: 'b',
                 classes: [ 'placeholder' ]
             },
             model: ( viewElement, { writer: modelWriter } ) => {
