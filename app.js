@@ -160,6 +160,7 @@ class PlaceholderEditing extends Plugin {
                 classes: [ 'placeholder' ]
             },
             model: ( viewElement, { writer: modelWriter } ) => {
+                console.log('upcast called', new Error('trace'));
                 // Extract the "name" from "{name}".
                 const name = viewElement.getChild( 0 ).data.slice( 1, -1 );
 
