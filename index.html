@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>CKEditor 5 Framework – Implementing a simple widget</title>
-	<style>
-	.placeholder {
-	    background: #ffff00;
-	    padding: 4px 2px;
-	    outline-offset: -2px;
-	    line-height: 1em;
-	    margin: 0 1px;
-	}
 
-	.placeholder::selection {
-	    display: none;
-	}
-	</style>
-    </head>
-    <body>
-        <div id="editor">
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>CKEditor 5 Framework – Implementing a simple widget</title>
+  <style>
+    .placeholder {
+      background: #ffff00;
+      padding: 4px 2px;
+      outline-offset: -2px;
+      line-height: 1em;
+      margin: 0 1px;
+    }
 
-        <script src="dist/bundle.js"></script>
-    </body>
+    .placeholder::selection {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="editor">
+    <p>
+      buggy paragraph
+      <b class="placeholder">{date}</b>
+      <b class="placeholder">{color}</b>
+    </p>
+    <p>
+      good paragraph
+      <b class="placeholder">{date}</b>
+      <b class="placeholder">{color}</b>
+      test
+    </p>
+
+  </div>
+
+  <script src="dist/bundle.js"></script>
+</body>
+
 </html>

@@ -171,7 +171,7 @@ class PlaceholderEditing extends Plugin {
         conversion.for( 'editingDowncast' ).elementToElement( {
             model: 'placeholder',
             view: ( modelItem, { writer: viewWriter } ) => {
-                const widgetElement = createPlaceholderView( modelItem, viewWriter );
+                const widgetElement = createPlaceholderView( modelItem, viewWriter, 'span' );
 
                 // Enable widget handling on a placeholder element inside the editing view.
                 return toWidget( widgetElement, viewWriter );
@@ -180,14 +180,14 @@ class PlaceholderEditing extends Plugin {
 
         conversion.for( 'dataDowncast' ).elementToElement( {
             model: 'placeholder',
-            view: ( modelItem, { writer: viewWriter } ) => createPlaceholderView( modelItem, viewWriter )
+            view: ( modelItem, { writer: viewWriter } ) => createPlaceholderView( modelItem, viewWriter, 'b' )
         } );
 
         // Helper method for both downcast converters.
-        function createPlaceholderView( modelItem, viewWriter ) {
+        function createPlaceholderView( modelItem, viewWriter, tagName ) {
             const name = modelItem.getAttribute( 'name' );
 
-            const placeholderView = viewWriter.createContainerElement( 'span', {
+            const placeholderView = viewWriter.createContainerElement( tagName, {
                 class: 'placeholder'
             }, {
                 isAllowedInsideAttributeElement: true
